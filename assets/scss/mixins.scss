@@ -1,0 +1,40 @@
+@mixin print-styles($map){
+
+  @each $breakpoint, $style-map in $map {
+    @if $breakpoint == 'xsmall' {
+      @each $property, $value in $style-map {
+        #{$property}: $value;
+      }
+    }
+    @else {
+      @include breakpoint($breakpoint) {
+        @each $property, $value in $style-map {
+          #{$property}: $value;
+        }
+      }
+    }
+  }
+
+}
+
+$body-text-style: (
+  xsmall: (
+    font-size: 16px,
+    line-height:1.375,
+    font-weight: normal
+  ),
+  small: (
+    font-size: 17px,
+  ),
+  medium: (
+    font-size: 18px,
+  ),
+  large: (
+    font-size: 20px,
+  ),
+);
+
+@mixin body-text {
+  font-family: 'Helvetica Neue', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
+  @include print-styles($body-text-style)
+}
