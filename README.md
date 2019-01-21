@@ -1,6 +1,4 @@
-# Marine2019
-
-> Hello world
+# Simple nuxt starter
 
 ## Build Setup
 
