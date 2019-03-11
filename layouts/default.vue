@@ -77,7 +77,7 @@ h1, h2, h3, h4, h5, h6{
   flex-grow: 1;
 
   &.in-page-work{
-    padding-bottom: 0;
+    //padding-bottom: 0;
   }
 }
 .app__container-square{
@@ -97,7 +97,7 @@ h1, h2, h3, h4, h5, h6{
   }
 
   .in-page-work &{
-    border-bottom: 0;
+    //border-bottom: 0;
     border-left:0;
   }
 }
