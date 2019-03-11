@@ -2,19 +2,19 @@
   <div class="app">
     <site-header />
     <div
-      :class="{ 'in-page': showMiddleSquare }"
+      :class="{ 'in-page': !isIndexPage, 'in-page-work': isWorkPage }"
       class="app__container">
       <nuxt-link
           class="app__link app__container-square"
-          to="/work"><span>Work</span></nuxt-link>
+          to="/work"><span>work</span></nuxt-link>
       <div
-        v-show="showMiddleSquare"
+        v-show="!isIndexPage"
         class="app__container-square">
         <nuxt class="page" />
       </div>
       <nuxt-link
           class="app__link app__container-square"
-          to="/about"><span>About me</span></nuxt-link>
+          to="/about"><span>about me</span></nuxt-link>
     </div>
   </div>
 </template>
@@ -25,9 +25,12 @@ export default {
     siteHeader
   },
   computed: {
-    showMiddleSquare() {
+    isIndexPage() {
       console.log(this.$nuxt.$route.path)
-      return this.$nuxt.$route.path !== '/'
+      return this.$nuxt.$route.path === '/'
+    },
+    isWorkPage() {
+      return this.$nuxt.$route.path === '/work'
     }
   }
 }
@@ -47,6 +50,7 @@ html {
 }
 html, body, .app{
   min-height: 100vh;
+  overflow: visible;
 }
 
 *,
@@ -71,6 +75,10 @@ h1, h2, h3, h4, h5, h6{
   justify-content: center;
   align-items: stretch;
   flex-grow: 1;
+
+  &.in-page-work{
+    padding-bottom: 0;
+  }
 }
 .app__container-square{
   width: 100%;
@@ -87,15 +95,30 @@ h1, h2, h3, h4, h5, h6{
       opacity: 0;
     }
   }
+
+  .in-page-work &{
+    border-bottom: 0;
+    border-left:0;
+  }
 }
 .app__link{
   text-decoration: none;
   color: inherit;
   transition: all .2s ease-out;
+
   &:hover{
     background: rgba(97,97,97,0.1);
   }
   .in-page &{
+    max-width: 3.5rem;
+    span{
+      white-space:nowrap;
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%) rotate(-90deg);
+    }
+  }
+  .in-page-work &{
     max-width: 3.5rem;
     span{
       white-space:nowrap;

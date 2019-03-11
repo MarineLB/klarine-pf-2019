@@ -40,6 +40,7 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
+    'nuxt-svg',
     [
       'prismic-nuxt',
       {

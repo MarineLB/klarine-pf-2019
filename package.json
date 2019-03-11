@@ -16,7 +16,10 @@
     "cross-env": "^5.2.0",
     "nuxt": "^2.4.5",
     "nuxt-sass-resources-loader": "^2.0.5",
-    "prismic-dom": "^2.1.0"
+    "nuxt-svg": "^0.1.4",
+    "prismic-dom": "^2.1.0",
+    "prismic-javascript": "^2.0.1",
+    "vue-svg-loader": "^0.12.0"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^0.0.1",
