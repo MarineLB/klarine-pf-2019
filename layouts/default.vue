@@ -8,7 +8,7 @@
           class="app__link app__container-square"
           to="/work"><span>work</span></nuxt-link>
       <div
-        v-show="!isIndexPage"
+        v-if="!isIndexPage"
         class="app__container-square">
         <nuxt class="page" />
       </div>
