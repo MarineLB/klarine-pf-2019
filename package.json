@@ -20,6 +20,7 @@
     "prismic-dom": "^2.1.0",
     "prismic-javascript": "^2.0.1",
     "prismic-nuxt": "^0.4.0",
+    "vue": "^2.6.10",
     "vue-svg-loader": "^0.12.0"
   },
   "devDependencies": {
