@@ -1,5 +1,5 @@
 <template>
-  <section class="container">
+  <section class="index">
     hello
   </section>
 </template>
@@ -14,3 +14,8 @@ export default {
   },
 }
 </script>
+<style>
+  .index{
+    width: 0;
+  }
+</style>
