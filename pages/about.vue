@@ -11,8 +11,7 @@
 <script>
 export default {
   transition: {
-    name: 'about',
-    css: false
+    name: 'fade',
   },
   async asyncData({ app, error, store }) {
     let document = await app.$prismic.api.getSingle('about');

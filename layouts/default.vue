@@ -5,16 +5,16 @@
       :class="{ 'in-page': !isIndexPage, 'in-page-work': isWorkPage }"
       class="app__container">
       <nuxt-link
-          class="app__link app__container-square"
-          to="/work"><span>work</span></nuxt-link>
+        class="app__link app__container-square"
+        to="/work"><span>work</span></nuxt-link>
       <div
-        v-if="!isIndexPage"
+        v-show="!isIndexPage"
         class="app__container-square">
         <nuxt class="page" />
       </div>
       <nuxt-link
-          class="app__link app__container-square"
-          to="/about"><span>about me</span></nuxt-link>
+        class="app__link app__container-square"
+        to="/about"><span>about me</span></nuxt-link>
     </div>
   </div>
 </template>
@@ -86,6 +86,7 @@ h1, h2, h3, h4, h5, h6{
   display: flex;
   justify-content:center;
   align-items:center;
+  transition: all .3s ease-out;
   & + .app__container-square{
     border-left: none;
   }
@@ -104,7 +105,7 @@ h1, h2, h3, h4, h5, h6{
 .app__link{
   text-decoration: none;
   color: inherit;
-  transition: all .2s ease-out;
+
 
   &:hover{
     background: rgba(97,97,97,0.1);
@@ -133,5 +134,14 @@ a{
 .page{
   height: 100%;
   width: 100%;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity .3s ease-out;
+}
+
+.fade-enter,
+.fade-leave-active {
+  opacity: 0
 }
 </style>

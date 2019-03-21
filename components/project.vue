@@ -48,7 +48,6 @@
       }
     },
     mounted() {
-      console.log(this.data);
       window.addEventListener('resize', this.getWidth)
       this.getWidth();
     },
@@ -81,6 +80,9 @@
     font-size: 0.8rem;
     font-family:inherit;
     letter-spacing: 2px;
+  }
+  p{
+    margin-bottom: 0.35rem;
   }
 }
 .project__caption--secondary{

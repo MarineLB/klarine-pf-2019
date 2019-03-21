@@ -26,6 +26,7 @@ module.exports = {
   */
   loading: false,
 
+
   /*
   ** Global CSS
   */

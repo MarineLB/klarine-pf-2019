@@ -24,8 +24,7 @@ export default {
     project
   },
   transition: {
-    name: 'work',
-    css: false
+    name: 'fade',
   },
   async fetch({ store, params }) {
     if (!store.state.homeDocument) {

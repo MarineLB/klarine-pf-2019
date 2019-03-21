@@ -11,6 +11,6 @@ export default {
       await store.dispatch('getHomeData')
     }
     return ''
-  }
+  },
 }
 </script>
