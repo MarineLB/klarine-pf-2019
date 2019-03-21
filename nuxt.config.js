@@ -18,7 +18,7 @@ module.exports = {
         content: 'French creative designer, 4th year student at HETIC'
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/png', href: '/favicon.png' }]
   },
 
   /*
