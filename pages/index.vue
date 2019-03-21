@@ -1,16 +1,21 @@
 <template>
-  <section class="container">
+  <section class="index">
     hello
   </section>
 </template>
 
 <script>
-export default {
-  async fetch({ store, params }) {
-    if (!store.state.homeDocument) {
-      await store.dispatch('getHomeData')
-    }
-    return ''
+  export default {
+    async fetch({ store, params }) {
+      if (!store.state.homeDocument) {
+        await store.dispatch('getHomeData')
+      }
+      return ''
+    },
   }
-}
 </script>
+<style>
+  .index{
+    width: 0;
+  }
+</style>
