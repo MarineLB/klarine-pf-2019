@@ -8,6 +8,7 @@
       <project
         v-for="project in projects"
         :key="project.id"
+        :slug="project.id"
         :data="project.data"/>
     </div>
   </div>
