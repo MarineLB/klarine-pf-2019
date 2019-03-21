@@ -86,7 +86,6 @@ h1, h2, h3, h4, h5, h6{
   display: flex;
   justify-content:center;
   align-items:center;
-  transition: all .3s ease-out;
   & + .app__container-square{
     border-left: none;
   }
@@ -106,12 +105,17 @@ h1, h2, h3, h4, h5, h6{
   text-decoration: none;
   color: inherit;
 
-
   &:hover{
     background: rgba(97,97,97,0.1);
   }
   .in-page &{
     max-width: 3.5rem;
+    min-width: 2rem;
+
+    &.nuxt-link-exact-active{
+      min-width: 0;
+    }
+
     span{
       white-space:nowrap;
       position: fixed;
@@ -126,6 +130,7 @@ h1, h2, h3, h4, h5, h6{
       transform: rotate(-90deg);
     }
   }
+
 }
 a{
   color: inherit;

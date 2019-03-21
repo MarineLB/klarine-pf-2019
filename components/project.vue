@@ -76,6 +76,9 @@
   display: flex;
   justify-content: space-between;
   margin:0 auto;
+  @media (max-width: 1000px) {
+    flex-wrap: wrap;
+  }
   pre{
     font-size: 0.8rem;
     font-family:inherit;
@@ -87,5 +90,9 @@
 }
 .project__caption--secondary{
   text-align: right;
+  @media (max-width: 1000px) {
+    text-align: left;
+    margin-top: 1rem;
+  }
 }
 </style>
