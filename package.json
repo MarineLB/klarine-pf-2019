@@ -20,8 +20,10 @@
     "prismic-dom": "^2.1.0",
     "prismic-javascript": "^2.0.1",
     "prismic-nuxt": "^0.4.0",
+    "vue": "^2.6.10",
     "vue-loader": "^15.7.0",
-    "vue-svg-loader": "^0.12.0"
+    "vue-svg-loader": "^0.12.0",
+    "vue-template-compiler": "^2.6.10"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^0.0.1",
