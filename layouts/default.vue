@@ -2,7 +2,7 @@
   <div class="app">
     <site-header />
     <div
-      :class="{ 'in-page': !isIndexPage, 'in-page-work': isWorkPage }"
+      :class="{ 'in-page': !isIndexPage, 'in-page-work': isWorkPage, 'in-page-about': isAboutPage }"
       class="app__container">
       <nuxt-link
         class="app__link app__container-square"
@@ -26,11 +26,14 @@
     },
     computed: {
       isIndexPage() {
-        //console.log(this.$nuxt.$route.path)
+        console.log(this.$nuxt.$route.path)
         return this.$nuxt.$route.path === '/'
       },
       isWorkPage() {
         return this.$nuxt.$route.path === '/work'
+      },
+      isAboutPage() {
+        return this.$nuxt.$route.path === '/about'
       }
     }
   }
@@ -108,7 +111,8 @@
     &:hover{
       background: rgba(97,97,97,0.1);
     }
-    .in-page &{
+    .in-page-about &,
+    .in-page-work &{
       max-width: 3.5rem;
       min-width: 2rem;
 
