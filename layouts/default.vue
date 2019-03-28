@@ -1,6 +1,7 @@
 <template>
   <div class="app">
     <site-header />
+    isAboutPage {{ isAboutPage }}
     <div
       :class="{ 'in-page': !isIndexPage, 'in-page-work': isWorkPage, 'in-page-about': isAboutPage }"
       class="app__container">
