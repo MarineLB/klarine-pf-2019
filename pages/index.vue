@@ -16,6 +16,8 @@
 </script>
 <style>
   .index{
+    visibility: hidden;
     width: 0;
+    overflow: hidden;
   }
 </style>

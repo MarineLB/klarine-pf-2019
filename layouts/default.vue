@@ -26,7 +26,6 @@
     },
     computed: {
       isIndexPage() {
-        console.log(this.$nuxt.$route.path)
         return this.$nuxt.$route.path === '/'
       },
       isWorkPage() {

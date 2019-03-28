@@ -9,13 +9,14 @@
         :key="item.image.url"
         class="project-image"
         :alt="item.image.alt"
-        :src="item.image.url"
-        @show="getWidth"/>
+        :src="item.image.url"/>
     </div>
-    <figcaption
+    <lazy-component
       v-if="data.images"
       :style="{width}"
-      class="project__caption">
+      tag="figcaption"
+      class="project__caption"
+      @show="getWidth">
       <div class="project__caption--primary">
         <h3
           class="project__description"
@@ -27,7 +28,7 @@
           v-html="$prismic.dom.RichText.asHtml(data.project_type, $prismic.linkResolver)"></div>
         <div class="project__year">{{ data.year }}</div>
       </div>
-    </figcaption>
+    </lazy-component>
   </figure>
 </template>
 <script>
