@@ -3,14 +3,17 @@
     <div
       :ref="slug"
       class="project-images">
-      <img
+      <lazy-component
+        tag="img"
         v-for="item in data.images"
         :key="item.image.url"
         class="project-image"
+        :alt="item.image.alt"
         :src="item.image.url"
-        :alt="item.image.alt" />
+        @show="getWidth"/>
     </div>
     <figcaption
+      v-if="data.images"
       :style="{width}"
       class="project__caption">
       <div class="project__caption--primary">
@@ -35,21 +38,26 @@
     ],
     data() {
       return {
-        width: '100%'
+        width: '300px'
       }
     },
     methods: {
       getWidth() {
+        console.log('in get width')
         if (process.browser) {
           const images = this.$refs[this.slug].querySelectorAll('.project-image');
           const last = images[images.length -1];
-          this.width = last.offsetWidth+'px';
+          if (last.offsetWidth <= 0){
+            return 0
+          } else {
+            this.width = last.offsetWidth+'px';
+          }
         }
       }
     },
     mounted() {
       window.addEventListener('resize', this.getWidth)
-      this.getWidth();
+      //this.getWidth();
     },
     destroyed() {
       window.removeEventListener('resize', this.getWidth);
@@ -76,6 +84,7 @@
     display: flex;
     justify-content: space-between;
     margin:0 auto;
+    min-width: 300px;
     @media (max-width: 1000px) {
       flex-wrap: wrap;
     }
