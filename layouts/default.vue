@@ -1,9 +1,11 @@
 <template>
   <div class="app">
     <site-header />
+    isIndexPage {{ isIndexPage }}
     isAboutPage {{ isAboutPage }}
+    isWorkPage {{ isWorkPage }}
     <div
-      :class="{ 'in-page': !isIndexPage, 'in-page-work': isWorkPage, 'in-page-about': isAboutPage }"
+      :class="{ 'in-page': !isIndexPage, 'in-page-index': isIndexPage, 'in-page-work': isWorkPage, 'in-page-about': isAboutPage }"
       class="app__container">
       <nuxt-link
         class="app__link app__container-square"
@@ -111,6 +113,7 @@
     &:hover{
       background: rgba(97,97,97,0.1);
     }
+
     .in-page-about &,
     .in-page-work &{
       max-width: 3.5rem;
@@ -127,10 +130,11 @@
         transform: translateY(-50%) rotate(-90deg);
       }
     }
+    .in-page-index &{
+      max-width: none;
+    }
     .in-page-work &{
-      max-width: 3.5rem;
       span{
-        white-space:nowrap;
         transform: rotate(-90deg);
       }
     }
