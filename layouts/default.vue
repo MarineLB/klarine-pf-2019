@@ -35,8 +35,8 @@
         return {
           'in-page': this.currentPath !== '/',
           'in-page-index': this.currentPath === '/',
-          'in-page-work': this.currentPath === '/work',
-          'in-page-about': this.currentPath === '/about'
+          'in-page-work': this.currentPath === '/work' || this.currentPath === '/work/',
+          'in-page-about': this.currentPath === '/about' || this.currentPath === '/about/'
         }
       }
 //      isIndexPage() {
