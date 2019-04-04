@@ -1,11 +1,8 @@
 <template>
   <div class="app">
     <site-header />
-    isIndexPage {{ isIndexPage }}
-    isAboutPage {{ isAboutPage }}
-    isWorkPage {{ isWorkPage }}
     <div
-      :class="{ 'in-page': !isIndexPage, 'in-page-index': isIndexPage, 'in-page-work': isWorkPage, 'in-page-about': isAboutPage }"
+      :class="containerClass"
       class="app__container">
       <nuxt-link
         class="app__link app__container-square"
@@ -27,17 +24,47 @@
     components: {
       siteHeader
     },
+    data() {
+      return {
+        currentPath: '',
+        isIndexPage: false
+      }
+    },
     computed: {
-      isIndexPage() {
-        return this.$nuxt.$route.path === '/'
-      },
-      isWorkPage() {
-        return this.$nuxt.$route.path === '/work'
-      },
-      isAboutPage() {
-        return this.$nuxt.$route.path === '/about'
+      containerClass() {
+        return {
+          'in-page': this.currentPath !== '/',
+          'in-page-index': this.currentPath === '/',
+          'in-page-work': this.currentPath === '/work',
+          'in-page-about': this.currentPath === '/about'
+        }
+      }
+//      isIndexPage() {
+//        return this.$nuxt.$route.path === '/'
+//      },
+//      isWorkPage() {
+//        return this.$nuxt.$route.path === '/work'
+//      },
+//      isAboutPage() {
+//        return this.$nuxt.$route.path === '/about'
+//      }
+    },
+    watch: {
+      $route() {
+        this.getCurrentPath();
+      }
+    },
+    mounted(){
+      this.getCurrentPath();
+    },
+    methods: {
+      getCurrentPath() {
+        console.log('in get current path', this.$nuxt.$route.path)
+        this.isIndexPage = this.$nuxt.$route.path === '/';
+        this.currentPath = this.$nuxt.$route.path;
       }
     }
+
   }
 </script>
 <style lang="scss">
